@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "category": "Account",
+    "question": "How do I reset my password?",
+    "answer": "You can reset your password by selecting 'Forgot Password' on the login page. Enter your registered email address, and we will send you a secure link to create a new password within minutes.",
+    "keywords": ["password", "reset", "forgot", "login", "recover", "change password", "access"]
+  },
+  {
+    "id": 2,
+    "category": "Account",
+    "question": "How do I create a new account?",
+    "answer": "To create a new account, click the 'Sign Up' button on the top right of the homepage. Provide your full name, email address, and choose a strong password. You will receive a verification email to activate your account.",
+    "keywords": ["create", "account", "register", "signup", "sign up", "new user", "join"]
+  },
+  {
+    "id": 3,
+    "category": "Account",
+    "question": "How can I change my email address?",
+    "answer": "Go to Account Settings > Profile > Email Address. Enter your new email address and confirm your current password. A verification link will be sent to your new email to confirm the change.",
+    "keywords": ["change", "email", "update email", "profile", "new address"]
+  },
+  {
+    "id": 4,
+    "category": "Account",
+    "question": "How do I update my profile information?",
+    "answer": "Navigate to Account Settings > Profile. Here you can update your name, phone number, display picture, time zone, and bio. Remember to click 'Save Changes' at the bottom of the page.",
+    "keywords": ["update", "profile", "edit profile", "personal info", "change name", "phone number"]
+  },
+  {
+    "id": 5,
+    "category": "Account",
+    "question": "How do I delete or deactivate my account?",
+    "answer": "To permanently delete your account, visit Account Settings > Privacy & Security > Delete Account. Please note that account deletion is irreversible and all your stored data and history will be permanently erased.",
+    "keywords": ["delete", "deactivate", "close account", "remove account", "cancel membership"]
+  },
+  {
+    "id": 6,
+    "category": "Account",
+    "question": "Why is my account suspended or locked?",
+    "answer": "Accounts may be temporarily locked after multiple failed login attempts or flagged for unusual activity to protect your security. Check your inbox for an account unlock email or contact our support team to verify your identity.",
+    "keywords": ["locked", "suspended", "disabled", "banned", "cannot login", "blocked"]
+  },
+  {
+    "id": 7,
+    "category": "Payments",
+    "question": "What payment methods are supported?",
+    "answer": "We accept major credit and debit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and bank wire transfers for enterprise subscriptions.",
+    "keywords": ["payment", "methods", "credit card", "debit card", "paypal", "apple pay", "google pay", "pay"]
+  },
+  {
+    "id": 8,
+    "category": "Payments",
+    "question": "How do I get a refund?",
+    "answer": "You can request a refund within 30 days of purchase. Go to Billing > Invoices, select the transaction, and click 'Request Refund'. Our billing team processes verified requests within 3-5 business days.",
+    "keywords": ["refund", "money back", "reimbursement", "cancel charge", "return money", "claim refund"]
+  },
+  {
+    "id": 9,
+    "category": "Payments",
+    "question": "Why did my payment fail?",
+    "answer": "Payment failures are usually due to insufficient funds, an expired card, incorrect billing zip codes, or bank fraud prevention filters. We recommend contacting your issuing bank or trying an alternative payment method.",
+    "keywords": ["payment failed", "declined", "card rejected", "transaction error", "billing issue"]
+  },
+  {
+    "id": 10,
+    "category": "Payments",
+    "question": "Where can I find my invoices and payment history?",
+    "answer": "You can view and download all past invoices as PDF files under Billing > Invoices & Receipts in your account dashboard. Each invoice includes breakdown of taxes and fees.",
+    "keywords": ["invoice", "receipt", "billing history", "payment history", "download invoice", "statement"]
+  },
+  {
+    "id": 11,
+    "category": "Payments",
+    "question": "How do I update my billing details or credit card?",
+    "answer": "Go to Account Settings > Billing > Payment Methods. Click 'Add New Card' or edit your existing payment method to set it as default.",
+    "keywords": ["update billing", "change card", "new credit card", "payment method", "billing address"]
+  },
+  {
+    "id": 12,
+    "category": "Payments",
+    "question": "Will my subscription renew automatically?",
+    "answer": "Yes, all monthly and annual subscriptions renew automatically at the end of each billing cycle unless cancelled prior to the renewal date. You will receive a reminder email 7 days before annual renewal.",
+    "keywords": ["auto renew", "subscription renewal", "recurring payment", "annual billing"]
+  },
+  {
+    "id": 13,
+    "category": "Orders",
+    "question": "How can I track my order or service request?",
+    "answer": "Once an order or request is placed, you will receive a tracking link via email. Alternatively, log into your account and navigate to Orders > Order History to view real-time status updates.",
+    "keywords": ["track order", "order status", "delivery status", "shipment tracking", "where is my order"]
+  },
+  {
+    "id": 14,
+    "category": "Orders",
+    "question": "Can I cancel an order after placing it?",
+    "answer": "You can cancel your order within 1 hour of placing it directly from the 'Orders' dashboard by clicking 'Cancel Order'. If the order has already been processed or dispatched, you will need to initiate a return once delivered.",
+    "keywords": ["cancel order", "stop order", "revoke purchase", "void order"]
+  },
+  {
+    "id": 15,
+    "category": "Orders",
+    "question": "How long does delivery or order fulfillment take?",
+    "answer": "Standard delivery takes between 3 to 5 business days. Express shipping takes 1 to 2 business days. For digital products and services, activation is instantaneous upon payment confirmation.",
+    "keywords": ["delivery time", "shipping duration", "how long", "fulfillment", "estimated arrival"]
+  },
+  {
+    "id": 16,
+    "category": "Orders",
+    "question": "Can I change my shipping or delivery address?",
+    "answer": "You can modify your shipping address as long as the order has not yet entered the 'Dispatched' state. Visit your Orders dashboard, select the order, and choose 'Edit Address'.",
+    "keywords": ["change address", "shipping address", "update delivery", "wrong address"]
+  },
+  {
+    "id": 17,
+    "category": "Orders",
+    "question": "What should I do if my order arrived damaged or incomplete?",
+    "answer": "Please photograph the damaged item and packaging, then visit Support > Report an Issue within 48 hours of delivery. Our support team will promptly arrange a replacement or refund.",
+    "keywords": ["damaged item", "broken product", "missing items", "incomplete order", "wrong item"]
+  },
+  {
+    "id": 18,
+    "category": "Technical Support",
+    "question": "Why is the application not loading or running slow?",
+    "answer": "Try clearing your browser cache and cookies, disabling conflicting browser extensions, and refreshing the page. Ensure your browser is updated to the latest version. You can also check our status page for any reported outages.",
+    "keywords": ["app not loading", "slow performance", "blank screen", "lag", "crash", "website down"]
+  },
+  {
+    "id": 19,
+    "category": "Technical Support",
+    "question": "How do I update the application or clear browser cache?",
+    "answer": "On Chrome, Firefox, or Edge, press Ctrl + Shift + R (Windows) or Cmd + Shift + R (Mac) to hard refresh. To clear cache, open browser settings, find 'Privacy & Security', and select 'Clear Browsing Data'.",
+    "keywords": ["clear cache", "hard refresh", "update app", "cookies", "browser reload"]
+  },
+  {
+    "id": 20,
+    "category": "Technical Support",
+    "question": "Why am I unable to log in to my account?",
+    "answer": "Double-check your credentials for typos and verify that Caps Lock is off. If you continue having trouble, click 'Forgot Password' to reset it, or ensure your browser accepts third-party cookies required for session authentication.",
+    "keywords": ["cannot login", "unable to sign in", "login failed", "credentials rejected", "cant log in"]
+  },
+  {
+    "id": 21,
+    "category": "Technical Support",
+    "question": "Which web browsers are supported?",
+    "answer": "AskSphere AI and our platform are fully optimized for modern versions of Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari, and Brave across desktop and mobile devices.",
+    "keywords": ["browser compatibility", "supported browsers", "chrome", "firefox", "safari", "edge"]
+  },
+  {
+    "id": 22,
+    "category": "Technical Support",
+    "question": "How do I report a software bug or glitch?",
+    "answer": "Navigate to the Help menu and click 'Report a Bug'. Please provide a brief description of the issue, steps to reproduce it, and any screenshots or error codes that appeared.",
+    "keywords": ["bug report", "glitch", "error code", "issue report", "system error"]
+  },
+  {
+    "id": 23,
+    "category": "Security",
+    "question": "How is my personal data protected and encrypted?",
+    "answer": "All data in transit is encrypted using industry-standard TLS 1.3 encryption, and sensitive data at rest is secured with AES-256 encryption. We comply with GDPR, CCPA, and SOC 2 Type II security frameworks.",
+    "keywords": ["data protection", "encryption", "privacy", "security", "gdpr", "safe", "secure"]
+  },
+  {
+    "id": 24,
+    "category": "Security",
+    "question": "How do I enable two-factor authentication (2FA)?",
+    "answer": "Go to Account Settings > Security > Two-Factor Authentication. Toggle 2FA on, scan the provided QR code with Google Authenticator or Authy, and enter the 6-digit confirmation code to activate.",
+    "keywords": ["two factor", "2fa", "mfa", "authenticator", "otp", "two step verification"]
+  },
+  {
+    "id": 25,
+    "category": "Security",
+    "question": "What should I do if I suspect unauthorized access or account breach?",
+    "answer": "Immediately change your account password and revoke all active sessions under Account Settings > Security > Active Sessions. Next, contact our security emergency desk at security@askspher.ai.",
+    "keywords": ["unauthorized access", "hacked", "account compromised", "security breach", "stolen password"]
+  },
+  {
+    "id": 26,
+    "category": "Security",
+    "question": "How do I manage active sessions and connected devices?",
+    "answer": "Go to Account Settings > Security > Active Devices. You will see a list of all logged-in devices with IP addresses and locations. Click 'Log Out Other Sessions' to terminate all other connections.",
+    "keywords": ["active sessions", "connected devices", "logout everywhere", "device management"]
+  },
+  {
+    "id": 27,
+    "category": "General",
+    "question": "How can I contact customer support?",
+    "answer": "You can reach our dedicated support team 24/7 via live chat directly within the app, email us at support@asksphere.ai, or submit a support ticket in the Help Center.",
+    "keywords": ["contact support", "help desk", "email support", "customer service", "reach agent", "call"]
+  },
+  {
+    "id": 28,
+    "category": "General",
+    "question": "What are your customer support operating hours?",
+    "answer": "Our live AI assistant is available 24/7/365. Human support specialists are available Monday through Friday from 8:00 AM to 8:00 PM EST, and weekend support operates from 9:00 AM to 5:00 PM EST.",
+    "keywords": ["support hours", "working hours", "availability", "when are you open", "business hours"]
+  },
+  {
+    "id": 29,
+    "category": "General",
+    "question": "Where can I find user documentation and guides?",
+    "answer": "Comprehensive documentation, API references, tutorials, and video walkthroughs are available in our Knowledge Base at docs.asksphere.ai.",
+    "keywords": ["documentation", "user guide", "manual", "api docs", "tutorials", "knowledge base"]
+  },
+  {
+    "id": 30,
+    "category": "General",
+    "question": "Is there a mobile app available for iOS and Android?",
+    "answer": "Yes! AskSphere AI is available as a responsive Progressive Web App (PWA) that installs on iOS and Android with offline capability, as well as native apps in the Apple App Store and Google Play Store.",
+    "keywords": ["mobile app", "ios", "android", "download app", "pwa", "phone app"]
+  },
+  {
+    "id": 31,
+    "category": "General",
+    "question": "What is AskSphere AI?",
+    "answer": "AskSphere AI is an intelligent Natural Language Processing (NLP) customer support assistant that matches user questions against structured knowledge base answers using TF-IDF vectorization and cosine similarity.",
+    "keywords": ["what is asksphere", "about asksphere", "overview", "product info", "ai assistant"]
+  },
+  {
+    "id": 32,
+    "category": "Account",
+    "question": "Can I merge two separate accounts?",
+    "answer": "Account merging is not currently supported through self-service for security reasons. Please reach out to our support team with proof of ownership for both email addresses, and an administrator will assist you.",
+    "keywords": ["merge accounts", "combine accounts", "transfer account", "multiple accounts"]
+  },
+  {
+    "id": 33,
+    "category": "Payments",
+    "question": "Do you offer discounts for students or non-profit organizations?",
+    "answer": "Yes! We offer a 50% discount for accredited educational institutions, students, and registered non-profit organizations. Submit your verification documents through our Education & Non-Profit portal.",
+    "keywords": ["discount", "student discount", "non-profit", "education plan", "promo code", "cheaper"]
+  },
+  {
+    "id": 34,
+    "category": "Technical Support",
+    "question": "What should I do if the service is unavailable or throwing 500 errors?",
+    "answer": "If you experience 500 server errors or service interruptions, please check status.asksphere.ai for real-time incident reports. Our engineering team receives automated alerts and will resolve outages swiftly.",
+    "keywords": ["service unavailable", "500 error", "server down", "outage", "maintenance"]
+  },
+  {
+    "id": 35,
+    "category": "Security",
+    "question": "Does AskSphere AI sell or share my data with third parties?",
+    "answer": "No. We never sell, rent, or monetize your personal data or conversation records to third parties or advertisers. We only process data necessary to provide and improve our core assistance services.",
+    "keywords": ["sell data", "third party", "privacy policy", "data sharing", "advertisers"]
+  }
+]

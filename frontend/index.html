@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskSphere AI - Intelligent FAQ & NLP Assistant</title>
+  <meta name="description" content="AskSphere AI is an intelligent FAQ and conversational assistant powered by NLP, TF-IDF vectorization, and cosine similarity matching.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <div class="sphere-glow"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>AskSphere <span class="badge-ai">AI</span></h2>
+          <span class="brand-sub">Intelligent FAQ Engine</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="chat" id="nav-chat-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>AI Assistant</span>
+        </button>
+        <button class="nav-item" data-tab="knowledge" id="nav-kb-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          <span>Knowledge Base</span>
+          <span class="nav-count" id="nav-faq-count">25</span>
+        </button>
+        <button class="nav-item" data-tab="inspector" id="nav-inspector-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span>NLP Inspector</span>
+        </button>
+        <button class="nav-item" data-tab="manage" id="nav-manage-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <span>Manage FAQs</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="health-card" id="system-health-card">
+          <div class="health-header">
+            <span class="status-dot online" id="health-dot"></span>
+            <span class="health-title" id="health-status-text">NLP Engine Ready</span>
+          </div>
+          <div class="health-meta">
+            <span id="health-features">Features: Loading...</span>
+            <span id="health-threshold">Threshold: 0.35</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1 id="page-title">AI Knowledge Assistant</h1>
+          <p id="page-desc">Instant answers powered by TF-IDF & Cosine Similarity NLP matching</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="action-btn" id="btn-quick-inspect" title="Inspect Last Query">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>NLP Breakdown</span>
+          </button>
+          <button class="action-btn primary" id="btn-open-add-modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>New FAQ</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: Chat Assistant -->
+      <section class="tab-pane active" id="pane-chat">
+        <div class="chat-container">
+          <!-- Messages Scrollable Body -->
+          <div class="chat-messages" id="chat-messages">
+            <!-- Welcome Bot Message -->
+            <div class="message-wrapper bot">
+              <div class="avatar bot-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4.5h-2V7h2z"/>
+                </svg>
+              </div>
+              <div class="message-bubble bot-bubble">
+                <div class="bubble-header">
+                  <span class="bot-name">AskSphere AI</span>
+                  <span class="confidence-tag high">System Ready</span>
+                </div>
+                <div class="bubble-body">
+                  <p>Hello! I am your AI Knowledge Base Assistant. Ask me any question about your account, billing, security, or service features, and I'll match the most relevant answers using natural language processing.</p>
+                </div>
+                <div class="quick-prompts-wrapper">
+                  <span class="prompts-label">Try asking:</span>
+                  <div class="prompts-list">
+                    <button class="prompt-chip" data-prompt="How do I reset my password?">🔑 How do I reset my password?</button>
+                    <button class="prompt-chip" data-prompt="What payment methods are supported?">💳 What payment methods are supported?</button>
+                    <button class="prompt-chip" data-prompt="How do I request a refund?">💵 How do I get a refund?</button>
+                    <button class="prompt-chip" data-prompt="Is two-factor authentication available?">🛡️ Is two-factor authentication available?</button>
+                    <button class="prompt-chip" data-prompt="Can I export my account data?">📦 Can I export my data?</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Area -->
+          <div class="chat-input-wrapper">
+            <form id="chat-form" class="chat-form">
+              <div class="input-container">
+                <textarea 
+                  id="chat-input" 
+                  placeholder="Type your question here (e.g. 'forgot my password', 'how to cancel subscription')..." 
+                  rows="1"
+                  maxlength="500"
+                ></textarea>
+                <div class="input-actions">
+                  <span class="char-count" id="chat-char-count">0/500</span>
+                  <button type="button" class="btn-clear" id="chat-clear-btn" title="Clear text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                  <button type="submit" class="btn-send" id="chat-send-btn" title="Send Question">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="input-hint">
+              <span>Press <kbd>Enter</kbd> to ask • <kbd>Shift + Enter</kbd> for newline • Supports natural language query matching</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Knowledge Base Explorer -->
+      <section class="tab-pane" id="pane-knowledge">
+        <div class="kb-header-card">
+          <div class="kb-search-bar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="kb-search-input" placeholder="Search FAQs by question, answer, or keywords...">
+            <button id="kb-clear-search" class="kb-clear-search" title="Clear search">✕</button>
+          </div>
+          <!-- Category Filter Pills -->
+          <div class="category-pills-row" id="kb-category-pills">
+            <!-- Dynamic Category Pills injected here -->
+          </div>
+        </div>
+
+        <div class="kb-content-grid" id="kb-grid">
+          <!-- Dynamic FAQ Cards injected here -->
+        </div>
+      </section>
+
+      <!-- TAB 3: NLP Inspector -->
+      <section class="tab-pane" id="pane-inspector">
+        <div class="inspector-container">
+          <div class="inspector-card input-sandbox">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>NLP Query Pipeline Sandbox</h3>
+                <p>Inspect tokenization, stopword removal, lemmatization, and dual TF-IDF cosine similarity calculations in real time.</p>
+              </div>
+            </div>
+            <div class="sandbox-input-row">
+              <input type="text" id="inspector-input" placeholder="Enter query to analyze (e.g. 'I want to change my registered email')" value="How do I reset my password?">
+              <button class="action-btn primary" id="btn-run-analysis">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Run Analysis</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="inspector-results" id="inspector-results">
+            <!-- Pipeline Stages -->
+            <div class="pipeline-grid">
+              <div class="pipeline-stage-card">
+                <div class="stage-tag">Step 1</div>
+                <h4>Cleaned Query</h4>
+                <div class="code-box" id="inspect-cleaned">—</div>
+              </div>
+              <div class="pipeline-stage-card">
+                <div class="stage-tag">Step 2</div>
+                <h4>Tokenization</h4>
+                <div class="tokens-cloud" id="inspect-tokens">—</div>
+              </div>
+              <div class="pipeline-stage-card">
+                <div class="stage-tag">Step 3</div>
+                <h4>Stopwords Removed</h4>
+                <div class="tokens-cloud removed" id="inspect-stopwords">—</div>
+              </div>
+              <div class="pipeline-stage-card">
+                <div class="stage-tag">Step 4</div>
+                <h4>Lemmatized Tokens</h4>
+                <div class="tokens-cloud lemmatized" id="inspect-lemmas">—</div>
+              </div>
+            </div>
+
+            <!-- Similarity Breakdown -->
+            <div class="inspector-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <h3>TF-IDF Similarity Matrix (Top Candidates)</h3>
+                  <p>Combined Score = 0.70 × Question Similarity + 0.30 × Keyword Similarity (or 0.90 × Max Component)</p>
+                </div>
+              </div>
+              <div class="similarity-table-wrapper">
+                <table class="sim-table">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Category</th>
+                      <th>Matched FAQ Question</th>
+                      <th>Question Sim</th>
+                      <th>Keyword Sim</th>
+                      <th>Final Score</th>
+                      <th>Confidence</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inspect-sim-tbody">
+                    <!-- Dynamic Rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: Manage FAQs -->
+      <section class="tab-pane" id="pane-manage">
+        <div class="manage-container">
+          <div class="manage-header-card">
+            <div class="manage-stats">
+              <div class="stat-item">
+                <span class="stat-number" id="manage-total-faqs">0</span>
+                <span class="stat-label">Total FAQs</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="manage-total-cats">0</span>
+                <span class="stat-label">Categories</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="manage-vector-vocab">—</span>
+                <span class="stat-label">Vocabulary Size</span>
+              </div>
+            </div>
+            <button class="action-btn primary" id="btn-add-faq-manage">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Knowledge Entry</span>
+            </button>
+          </div>
+
+          <div class="manage-table-card">
+            <div class="table-toolbar">
+              <input type="text" id="manage-filter-input" placeholder="Filter knowledge base...">
+            </div>
+            <div class="table-responsive">
+              <table class="data-table" id="faqs-admin-table">
+                <thead>
+                  <tr>
+                    <th width="60">ID</th>
+                    <th width="120">Category</th>
+                    <th>Question</th>
+                    <th>Answer Preview</th>
+                    <th width="180">Keywords</th>
+                    <th width="120" class="text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="faqs-admin-tbody">
+                  <!-- Dynamic Admin Rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: Add / Edit FAQ -->
+  <div class="modal-overlay" id="faq-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Add Knowledge Entry</h3>
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+      <form id="faq-modal-form">
+        <input type="hidden" id="modal-faq-id" value="">
+        <div class="form-group">
+          <label for="modal-category">Category</label>
+          <div class="category-input-group">
+            <select id="modal-category-select">
+              <option value="Account">Account</option>
+              <option value="Payments">Payments</option>
+              <option value="Billing">Billing</option>
+              <option value="Security">Security</option>
+              <option value="Technical">Technical</option>
+              <option value="Subscription">Subscription</option>
+              <option value="custom">+ New Category</option>
+            </select>
+            <input type="text" id="modal-category-custom" placeholder="New category name" class="hidden">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-question">Question *</label>
+          <input type="text" id="modal-question" placeholder="e.g. How do I change my billing cycle?" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-answer">Answer *</label>
+          <textarea id="modal-answer" rows="4" placeholder="Provide a detailed, helpful answer..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="modal-keywords">Keywords (comma-separated)</label>
+          <input type="text" id="modal-keywords" placeholder="e.g. billing, cycle, annual, monthly, switch">
+          <small class="form-hint">Keywords help the TF-IDF vectorizer match varied user phrasings.</small>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="action-btn" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="action-btn primary" id="modal-save-btn">Save Entry & Reindex</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
